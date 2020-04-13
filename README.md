@@ -1,4 +1,4 @@
-Software to starts multiple instances of Guild Wars (c).
+Software to start multiple instances of Guild Wars (c).
 
 The nexusdll.dll must be beside nexus.exe, but it doesn't need to be by the side
 of Guild Wars. Nexus will work just fine if you already started Guild Wars, but
