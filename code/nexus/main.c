@@ -69,6 +69,8 @@ int wmain(int argc, wchar_t *argv[])
 
     ResumeThread(ProcessInfo.hThread);
 
+    CloseHandle(ProcessInfo.hThread);
+    CloseHandle(ProcessInfo.hProcess);
     return 0;
 }
 
