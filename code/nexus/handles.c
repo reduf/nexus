@@ -75,16 +75,17 @@ BOOL CloseHandles(void)
 
     for (;;)
     {
+        ULONG ReturnLength;
         Status = NtQuerySystemInformation(
             SystemHandleInformation,
             HandleInfo,
             HandleInfoSize,
-            NULL);
+            &ReturnLength);
 
         if (Status != STATUS_INFO_LENGTH_MISMATCH)
             break;
 
-        HandleInfoSize *= 2;
+        HandleInfoSize = ReturnLength + 0x10000;
         HandleInfo = realloc(HandleInfo, HandleInfoSize);
     }
 
